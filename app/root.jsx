@@ -28,7 +28,11 @@ export const links = () => ([
 function Layout() {
   return (
     <main>
-      <Link to='/'><h3>Leandro remix📀</h3></Link>
+      <header>
+        <Link to='/'>
+          <h3>Leandro remix📀</h3>
+        </Link>
+      </header>
       <Outlet />
       <footer><small>© Copyright 2022 Leandro Martinez</small></footer>
     </main>
@@ -37,7 +41,7 @@ function Layout() {
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <Meta />
         <Links />
