@@ -14,24 +14,17 @@ export const loader = () => {
 }
 
 export default function Index() {
-  const { posts } = useLoaderData()
   return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
+    <div >
       <h2>Welcome to Remix</h2>
-      <nav>
-        <ul>
-          <Link to='/about'>Ir a about</Link>
+      <nav >
+        <ul style={{ marginBottom: '16px' }}>
+          <Link to='/posts'>Lista de posts</Link>
         </ul>
         <ul>
           <Link to='/posts/create'>Crear un post</Link>
         </ul>
       </nav>
-      {posts.map(post => (
-        <div key={post.id}>
-          <h2>{post.title}</h2>
-          <p>{post.content}</p>
-        </div>
-      ))}
     </div>
   )
 }

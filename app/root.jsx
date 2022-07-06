@@ -19,23 +19,25 @@ export const links = () => ([
     rel: 'stylesheet',
     href: globalStyles
   },
-  {
-    rel: 'stylesheet',
-    href: 'https://cdn.simplecss.org/simple.min.css'
-  }
+  // {
+  //   rel: 'stylesheet',
+  //   href: 'https://cdn.simplecss.org/simple.min.css'
+  // }
 ])
 
 function Layout() {
   return (
-    <main>
-      <header>
-        <Link to='/'>
-          <h3>Leandro remix📀</h3>
-        </Link>
-      </header>
-      <Outlet />
-      <footer><small>© Copyright 2022 Leandro Martinez</small></footer>
-    </main>
+    <div>
+      <main className="main">
+        <header>
+          <Link to='/'>
+            <h1 style={{ marginTop: '50px' }}>Leandro remix📀</h1>
+          </Link>
+        </header>
+        <Outlet />
+        <footer><small>© Copyright 2022 Leandro Martinez</small></footer>
+      </main>
+    </div>
   );
 }
 
