@@ -14,10 +14,10 @@
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 25px;
-  background: rgb(56, 30, 30);
+  background: rgb(93, 28, 93);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(79, 78, 78);
+  background: rgb(172, 55, 172);
 }
 /* Global */
 body {
@@ -25,23 +25,31 @@ body {
   padding: 0;
   font-family: system-ui, sans-serif;
   width: 100%;
-  background-color: rgb(57, 52, 52);
+  /* background-color: #2d1348; */
+  background-color: #937dc2;
 }
 a {
   text-decoration: none;
   color: var(--text-color);
 }
+h1,
+h2,
+h3 {
+  color: #fff;
+  text-align: center;
+}
 /* Header */
 .navbar,
 ul {
   padding: 0;
+  text-align: center;
 }
 .navbar,
 h2 {
   margin: 20px 0px;
 }
-/* Main */
-.main {
+/* container */
+.container {
   width: fit-content;
   border: 1px;
   height: 100vh;
@@ -51,26 +59,39 @@ h2 {
   align-items: center;
   margin: 0 auto;
 }
-.main h1 {
+.container h1 {
   color: var(--text-color);
+}
+/* Main */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.3rem;
 }
 /* Post */
 .flex-posts {
   display: flex;
   flex-direction: column;
   gap: 26px;
-  height: 300px;
-  padding: 0 16px;
+  height: 285px;
+  padding: 16px;
   overflow-y: auto;
 }
 .post-container {
   border-radius: 6px;
   box-shadow: 1px 3px 6px -4px #fff;
-  background: #242424;
+  /* background: #242424; */
+  background-color: #c33e77;
   width: 300px;
   display: flex;
   justify-content: space-between;
   padding: 16px;
+}
+.post-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .post-content,
 h3 {
@@ -83,16 +104,15 @@ h3 {
 p {
   color: var(--text-color);
   width: 160px;
-  height: 50px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* Button */
+/* Button Delete*/
 .btn-container {
   display: flex;
   align-items: center;
 }
-button {
+.btn-delete {
   font-size: 12px;
   width: 85px;
   height: 32px;
@@ -105,16 +125,16 @@ button {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
   background: #e62222;
 }
-button,
-button span {
+.btn-delete,
+.btn-delete span {
   transition: 200ms;
 }
-button .text {
+.btn-delete .text {
   transform: translateX(7px);
   color: white;
   font-weight: bold;
 }
-button .icon {
+.btn-delete .icon {
   position: relative;
   border-left: 1px solid #c41b1b;
   transform: translateX(25px);
@@ -124,25 +144,25 @@ button .icon {
   align-items: center;
   justify-content: center;
 }
-button svg {
+.btn-delete svg {
   width: 10px;
   fill: #eee;
 }
-button:hover {
+.btn-delete:hover {
   background: #ff3636;
 }
-button:hover .text {
+.btn-delete:hover .text {
   color: transparent;
 }
-button:hover .icon {
+.btn-delete:hover .icon {
   width: 10px;
   border-left: none;
   transform: translateX(0);
 }
-button:focus {
+.btn-delete:focus {
   outline: none;
 }
-button:active .icon svg {
+.btn-delete:active .icon svg {
   transform: scale(0.8);
 }
 /* Footer */
@@ -153,6 +173,104 @@ footer small {
   font-size: 13px;
   color: var(--text-color);
 }
+/* Form */
 form[disabled] {
   opacity: 0.7;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 200px;
+}
+.form-container {
+  height: 280px;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rebeccapurple;
+  padding: 20px;
+  border-radius: 20px;
+}
+.form-container h2 {
+  margin: 0;
+}
+.form-inputs {
+  margin: 0 auto;
+}
+.input {
+  line-height: 28px;
+  border: 2px solid transparent;
+  border-bottom-color: #777;
+  padding: 0.5rem 10px;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.input:focus,
+input:hover {
+  outline: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: rgba(87, 37, 136, 0.836);
+  border-color: #457fc6;
+}
+
+.input::placeholder {
+  color: rgb(214, 211, 211);
+}
+
+.input:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+/* Button Sned */
+.btn-send {
+  width: fit-content;
+  margin: 0 auto;
+  font-family: inherit;
+  font-size: 15px;
+  background: #4c3575;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+.btn-send span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+.btn-send svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+.btn-send:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+.btn-send:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+.btn-send:hover span {
+  transform: translateX(5em);
+}
+.btn-send:active {
+  transform: scale(0.95);
+}
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+  to {
+    transform: translateY(-0.1em);
+  }
 }

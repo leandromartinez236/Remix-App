@@ -18,17 +18,13 @@ export const links = () => ([
   {
     rel: 'stylesheet',
     href: globalStyles
-  },
-  // {
-  //   rel: 'stylesheet',
-  //   href: 'https://cdn.simplecss.org/simple.min.css'
-  // }
+  }
 ])
 
 function Layout() {
   return (
     <div>
-      <main className="main">
+      <main className="container">
         <header>
           <Link to='/'>
             <h1 style={{ marginTop: '50px' }}>Leandro remix📀</h1>

@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from '@remix-run/react'
+import { Link } from '@remix-run/react'
 
 export const loader = () => {
   const data = {
@@ -16,8 +16,7 @@ export const loader = () => {
 export default function Index() {
   return (
     <div >
-      <h2>Welcome to Remix</h2>
-      <nav >
+      <nav className='nav'>
         <ul style={{ marginBottom: '16px' }}>
           <Link to='/posts'>Lista de posts</Link>
         </ul>
