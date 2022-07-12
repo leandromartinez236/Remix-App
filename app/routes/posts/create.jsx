@@ -41,7 +41,7 @@ export default function CreatePost() {
   const isSubmitting = state === 'submitting'
   return (
     <div className="form-container">
-      <h2>Create new post</h2>
+      <h2 style={{ textAlign: 'center' }}>Create new post</h2>
       <Form disabled={isSubmitting} method="POST">
         <div className="form-inputs">
           <input className="input" required='' type="text" placeholder="Title" id='title' name="title" />
@@ -51,11 +51,6 @@ export default function CreatePost() {
           <input className="input" required='' type="text" placeholder="Content" id='body' name="body" />
           {data?.fieldErrors?.body && <small style={{ color: 'red' }}>{data?.fieldErrors?.body}</small>}
         </div>
-        {/* <button disabled={isSubmitting} type="submit">
-          {
-            !isSubmitting ? 'Add new post' : 'Wait for it...'
-          }
-        </button> */}
         <button className="btn-send" disabled={isSubmitting} type='submit'>
           <div class="svg-wrapper-1">
             <div class="svg-wrapper">
@@ -67,7 +62,6 @@ export default function CreatePost() {
           </div>
           <span>Send</span>
         </button>
-
       </Form>
     </div>
   )

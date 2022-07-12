@@ -18,10 +18,10 @@ export default function Index() {
     <div >
       <nav className='nav'>
         <ul style={{ marginBottom: '16px' }}>
-          <Link to='/posts'>Lista de posts</Link>
+          <Link to='/posts'>📄 Lista de posts</Link>
         </ul>
         <ul>
-          <Link to='/posts/create'>Crear un post</Link>
+          <Link to='/posts/create'>✍ Crear un post</Link>
         </ul>
       </nav>
     </div>

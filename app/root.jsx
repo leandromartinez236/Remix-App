@@ -27,7 +27,7 @@ function Layout() {
       <main className="container">
         <header>
           <Link to='/'>
-            <h1 style={{ marginTop: '50px' }}>Leandro remix📀</h1>
+            <h1 style={{ marginTop: '50px' }}>Leandro Remix📀</h1>
           </Link>
         </header>
         <Outlet />
